@@ -22,5 +22,19 @@ public class TeamTest {
     assertEquals(true, Team.all().contains(firstTeam));
     assertEquals(true, Team.all().contains(secondTeam));
   }
+//new - to clear the team array list
+  @Test
+  public void clear_emptiesAllTeamsFromArrayList_0() {
+    Team testTeam = new Team("SeattleTeam");
+    Team.clear();
+    assertEquals(0, Team.all().size());
+  }
+//new - to add an ID to the team
+  @Test
+  public void getTeamId_teamInstantiateWithAnId_1() {
+    Team.clear();
+    Team testTeam = new Team("SeattleTeam");
+    assertEquals(1, testTeam.getTeamId());
+  }
 
 }

@@ -1,13 +1,16 @@
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
+
 
 public class Team {
   private String mNameOfTeam;
   private static List<Team> instancesOfTeam = new ArrayList<Team>();
+  private int mTeamId;
 
   public Team(String nameOfTeam) {
     mNameOfTeam = nameOfTeam;
     instancesOfTeam.add(this);
+    mTeamId = instancesOfTeam.size();
   }
 
   public String getTeamName() {
@@ -16,6 +19,14 @@ public class Team {
 
   public static List<Team> all() {
     return instancesOfTeam;
+  }
+//new - method to clear team array
+  public static void clear() {
+    instancesOfTeam.clear();
+  }
+//new - method to get a team's unique ID
+  public int getTeamId() {
+    return mTeamId;
   }
 
 }
