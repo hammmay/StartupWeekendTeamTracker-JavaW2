@@ -33,11 +33,15 @@ public class Team {
   public static Team find(int teamId) {
     return instancesOfTeam.get(teamId - 1);
   }
-//method to check a team instantiates with an empty members list
+//method to check a team instantiates and returns a members list
   public List<Member> getMembers() {
     return mMembers;
   }
+//method to place members into teams
+  public void addMember(Member member) {
+    mMembers.add(member);
+  }
 
 
-
+  
 }
