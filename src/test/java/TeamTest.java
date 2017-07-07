@@ -5,7 +5,7 @@ public class TeamTest {
 
   @Test
   public void Team_instantiatesCorrectly_true() {
-    Team testTeam = new Team("Team 1");
+    Team testTeam = new Team("SeattleTeam");
     assertEquals(true, testTeam instanceof Team);
   }
 
@@ -15,5 +15,12 @@ public class TeamTest {
     assertEquals("SeattleTeam", testTeam.getTeamName());
   }
 
+  @Test
+  public void all_returnsAllInstancesOfTeams_true() {
+    Team firstTeam = new Team("SeattleTeam");
+    Team secondTeam = new Team("BellevueTeam");
+    assertEquals(true, Team.all().contains(firstTeam));
+    assertEquals(true, Team.all().contains(secondTeam));
+  }
 
 }
