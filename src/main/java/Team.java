@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class Team {
   private String mNameOfTeam;
   private static List<Team> instancesOfTeam = new ArrayList<Team>();
@@ -20,15 +19,15 @@ public class Team {
   public static List<Team> all() {
     return instancesOfTeam;
   }
-//new - method to clear team array
+//method to clear team array
   public static void clear() {
     instancesOfTeam.clear();
   }
-//new - method to get a team's unique ID
+//method to get a team's unique ID
   public int getTeamId() {
     return mTeamId;
   }
-//new - method to find a team based on ID
+//method to find a team based on ID
   public static Team find(int teamId) {
     return instancesOfTeam.get(teamId - 1);
   }

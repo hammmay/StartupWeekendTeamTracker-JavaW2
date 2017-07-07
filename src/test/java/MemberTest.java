@@ -22,7 +22,27 @@ public class MemberTest {
     assertEquals(true, Member.all().contains(firstMember));
     assertEquals(true, Member.all().contains(secondMember));
   }
-
-
+//to clear the team array list
+  @Test
+  public void clear_emptiesAllMembersFromArrayList_0() {
+    Member testMember = new Member("Human1");
+    Member.clear();
+    assertEquals(0, Member.all().size());
+  }
+//to add an ID to the team
+  @Test
+  public void getMemberId_memberInstantiateWithAnId_1() {
+    Member.clear();
+    Member testMember = new Member("Human1");
+    assertEquals(1, testMember.getMemberId());
+  }
+//to find a team based an ID
+  @Test
+  public void find_returnsMemberWithSameId_secondMember() {
+    Member.clear();
+    Member firstMember = new Member("Human1");
+    Member secondMember = new Member("Human2");
+    assertEquals(Member.find(secondMember.getMemberId()), secondMember);
+  }
 
 }
