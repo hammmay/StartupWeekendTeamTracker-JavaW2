@@ -5,11 +5,13 @@ public class Team {
   private String mNameOfTeam;
   private static List<Team> instancesOfTeam = new ArrayList<Team>();
   private int mTeamId;
+  private List<Member> mMembers;
 
   public Team(String nameOfTeam) {
     mNameOfTeam = nameOfTeam;
     instancesOfTeam.add(this);
     mTeamId = instancesOfTeam.size();
+    mMembers = new ArrayList<Member>();
   }
 
   public String getTeamName() {
@@ -31,7 +33,10 @@ public class Team {
   public static Team find(int teamId) {
     return instancesOfTeam.get(teamId - 1);
   }
-
+//method to check a team instantiates with an empty members list
+  public List<Member> getMembers() {
+    return mMembers;
+  }
 
 
 

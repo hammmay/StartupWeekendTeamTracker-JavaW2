@@ -44,6 +44,12 @@ public class TeamTest {
     Team secondTeam = new Team("BellevueTeam");
     assertEquals(Team.find(secondTeam.getTeamId()), secondTeam);
   }
-
+//to make sure the team instantiates with an empty members list
+  @Test
+  public void getTeams_initiallyReturnsEmptyList_ArrayList() {
+    Team.clear();
+    Team testTeam = new Team("SeattleTeam");
+    assertEquals(0, testTeam.getMembers().size());
+  }
 
 }
