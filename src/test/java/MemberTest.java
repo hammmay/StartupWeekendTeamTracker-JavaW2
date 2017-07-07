@@ -10,7 +10,7 @@ public class MemberTest {
   }
 //test to get name of member object
   @Test
-  public void Member_instantiatesWithMemberName_String() {
+  public void getMemberName_instantiatesWithMemberName_Human() {
     Member myMember = new Member("Human");
     assertEquals("Human", myMember.getMemberName());
   }
