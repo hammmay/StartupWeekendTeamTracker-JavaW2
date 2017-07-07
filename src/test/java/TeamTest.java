@@ -36,5 +36,14 @@ public class TeamTest {
     Team testTeam = new Team("SeattleTeam");
     assertEquals(1, testTeam.getTeamId());
   }
+//new - to find a team based an ID
+  @Test
+  public void find_returnsTeamWithSameId_secondTeam() {
+    Team.clear();
+    Team firstTeam = new Team("SeattleTeam");
+    Team secondTeam = new Team("BellevueTeam");
+    assertEquals(Team.find(secondTeam.getTeamId()), secondTeam);
+  }
+
 
 }

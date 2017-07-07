@@ -28,5 +28,12 @@ public class Team {
   public int getTeamId() {
     return mTeamId;
   }
+//new - method to find a team based on ID
+  public static Team find(int teamId) {
+    return instancesOfTeam.get(teamId - 1);
+  }
+
+
+
 
 }
