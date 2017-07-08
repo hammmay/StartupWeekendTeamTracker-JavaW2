@@ -1,0 +1,19 @@
+<!--index.vtl-->
+<h1>Startup Weekend Teams</h1>
+<br>
+
+#if ($team)
+  <p>Existing Teams:</p>
+  <p>$team.getTeamName()</p>
+#else
+  <p>Team List Is Empty</p>
+#end
+
+<br>
+<form action="/teams" method="post">
+  <label for="teamDescription">Team Name</label>
+  <input id="teamDescription" name="teamDescription" type="text">
+
+  <button type="submit" class="btn btn-default">Add This Team</button>
+</form>
+<!--index.vtl-->
