@@ -1,0 +1,26 @@
+<!--membersOnTeam.vtl-->
+<h1>$team.getTeamName()</h1>
+<br>
+#if ($members)
+  <h4>Existing Teams Members:</h4>
+  <ul>
+    #foreach ($member in $members)
+      <li>$member.getMemberName()</li>
+    #end
+  </ul>
+#else
+  <p>Your Team Member List Is Empty</p>
+#end
+
+<br>
+<form action="/memberSuccessPage" method="post">
+  <input id="teamId" name="teamId" type="hidden" value="$team.getTeamId()">
+
+  <div class="form-group">
+    <label for="memberDescription">New Member Name</label>
+    <input id="memberDescription" name="memberDescription" type="text" class="form-control">
+  </div>
+
+  <button type="submit" class="btn btn-success">Add This Coder</button>
+</form>
+<!--membersOnTeam.vtl-->

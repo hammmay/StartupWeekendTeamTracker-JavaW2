@@ -1,12 +1,14 @@
 <!--index.vtl-->
 <h1>Startup Weekend Teams</h1>
 <br>
-
+<a href="/eventDetails">Weekend Event Details</a>
+<br>
+<br>
 #if ($teams)
   <h4>Existing Teams:</h4>
   <ul>
     #foreach ($team in $teams)
-      <li><a href="/$team.getTeamId()">$team.getTeamName()</li>
+      <li><a href="/$team.getTeamId()">$team.getTeamName()</a></li>
     #end
   </ul>
 #else
@@ -14,7 +16,7 @@
 #end
 
 <br>
-<form action="/teams" method="post">
+<form action="/teamSuccessPage" method="post">
   <label for="teamDescription">Team Name</label>
   <input id="teamDescription" name="teamDescription" type="text">
 

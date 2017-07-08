@@ -18,7 +18,7 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    post("/teams", (request, response) -> {
+    post("/teamSuccessPage", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
 
       ArrayList<Team> teams = request.session().attribute("teams");
@@ -31,7 +31,35 @@ public class App {
       Team newTeam = new Team(teamDescription);
       teams.add(newTeam);
 
-      model.put("template", "templates/TeamSuccess.vtl");
+      model.put("template", "templates/teamSuccess.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/eventDetails", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      model.put("template", "templates/eventDetailsTemplate.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/:id", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      Team team = Team.find(Integer.parseInt(request.params(":id")));
+      model.put("team", team);
+      model.put("members", team.getMembers());
+      model.put("template", "templates/membersOnTeam.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    post("/memberSuccessPage", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+
+      Team team = Team.find(Integer.parseInt(request.queryParams("teamId")));
+
+      String memberDescription = request.queryParams("memberDescription");
+      Member newMember = new Member(memberDescription);
+      team.addMember(newMember);
+
+      model.put("template", "templates/memberSuccess.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
