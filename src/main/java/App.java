@@ -13,7 +13,7 @@ public class App {
 
     get("/", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
-      model.put("team", request.session().attribute("team"));
+      model.put("teams", request.session().attribute("teams"));
       model.put("template", "templates/index.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
@@ -22,7 +22,7 @@ public class App {
       Map<String, Object> model = new HashMap<String, Object>();
 
       ArrayList<Team> teams = request.session().attribute("teams");
-if (teams == null) {
+      if (teams == null) {
         teams = new ArrayList<Team>();
         request.session().attribute("teams", teams);
       }

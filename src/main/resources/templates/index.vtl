@@ -2,11 +2,15 @@
 <h1>Startup Weekend Teams</h1>
 <br>
 
-#if ($team)
-  <p>Existing Teams:</p>
-  <p>$team.getTeamName()</p>
+#if ($teams)
+  <h4>Existing Teams:</h4>
+  <ul>
+    #foreach ($team in $teams)
+      <li>$team.getTeamName()</li>
+    #end
+  </ul>
 #else
-  <p>Team List Is Empty</p>
+  <p>Your Team List Is Empty</p>
 #end
 
 <br>
