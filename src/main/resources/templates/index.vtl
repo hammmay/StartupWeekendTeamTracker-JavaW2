@@ -6,7 +6,7 @@
   <h4>Existing Teams:</h4>
   <ul>
     #foreach ($team in $teams)
-      <li>$team.getTeamName()</li>
+      <li><a href="/$team.getTeamId()">$team.getTeamName()</li>
     #end
   </ul>
 #else
