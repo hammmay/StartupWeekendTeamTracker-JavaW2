@@ -21,27 +21,24 @@ public class Team {
   public static List<Team> all() {
     return instancesOfTeam;
   }
-//method to clear team array
+
   public static void clear() {
     instancesOfTeam.clear();
   }
-//method to get a team's unique ID
+
   public int getTeamId() {
     return mTeamId;
   }
-//method to find a team based on ID
+
   public static Team find(int teamId) {
     return instancesOfTeam.get(teamId - 1);
   }
-//method to check a team instantiates and returns a members list
+
   public List<Member> getMembers() {
     return mMembers;
   }
-//method to place members into teams
+
   public void addMember(Member member) {
     mMembers.add(member);
   }
-
-
-  
 }

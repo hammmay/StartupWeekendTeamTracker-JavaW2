@@ -1,8 +1,8 @@
 <!--membersOnTeam.vtl-->
 <h1>$team.getTeamName()</h1>
 <br>
-#if ($members)
-  <h4>Existing Teams Members:</h4>
+#if ($members.size() > 0)
+  <h4>Existing Team Members:</h4>
   <ul>
     #foreach ($member in $members)
       <li>$member.getMemberName()</li>

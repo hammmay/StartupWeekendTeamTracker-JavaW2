@@ -22,21 +22,21 @@ public class TeamTest {
     assertEquals(true, Team.all().contains(firstTeam));
     assertEquals(true, Team.all().contains(secondTeam));
   }
-//to clear the team array list
+
   @Test
   public void clear_emptiesAllTeamsFromArrayList_0() {
     Team testTeam = new Team("SeattleTeam");
     Team.clear();
     assertEquals(0, Team.all().size());
   }
-//to add an ID to the team
+
   @Test
   public void getTeamId_teamInstantiateWithAnId_1() {
     Team.clear();
     Team testTeam = new Team("SeattleTeam");
     assertEquals(1, testTeam.getTeamId());
   }
-//to find a team based an ID
+
   @Test
   public void find_returnsTeamWithSameId_secondTeam() {
     Team.clear();
@@ -44,14 +44,14 @@ public class TeamTest {
     Team secondTeam = new Team("BellevueTeam");
     assertEquals(Team.find(secondTeam.getTeamId()), secondTeam);
   }
-//to make sure the team instantiates with an empty members list
+
   @Test
   public void getTeams_initiallyReturnsEmptyList_ArrayList() {
     Team.clear();
     Team testTeam = new Team("SeattleTeam");
     assertEquals(0, testTeam.getMembers().size());
   }
-//to add a member to a team
+
   @Test
   public void addMember_addsMemberToList_true() {
     Team testTeam = new Team("SeattleTeam");
@@ -59,6 +59,4 @@ public class TeamTest {
     testTeam.addMember(testMember);
     assertTrue(testTeam.getMembers().contains(testMember));
   }
-
-
 }
